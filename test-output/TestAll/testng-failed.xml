@@ -3,25 +3,25 @@
 <suite name="Failed suite [TestAll]" parallel="classes">
   <test name="TmpTest(failed)" parallel="classes">
     <classes>
-      <class name="com.park.selTest.SelTest2">
-        <methods>
-          <include name="stopServer"/>
-          <include name="startClient"/>
-        </methods>
-      </class> <!-- com.park.selTest.SelTest2 -->
-      <class name="com.park.selTest.SelTest3">
-        <methods>
-          <include name="stopServer"/>
-          <include name="startClient"/>
-          <include name="testApp3"/>
-        </methods>
-      </class> <!-- com.park.selTest.SelTest3 -->
       <class name="com.park.selTest.SelTest1">
         <methods>
           <include name="stopServer"/>
           <include name="startClient"/>
         </methods>
       </class> <!-- com.park.selTest.SelTest1 -->
+      <class name="com.park.selTest.SelTest3">
+        <methods>
+          <include name="stopServer"/>
+          <include name="startClient"/>
+        </methods>
+      </class> <!-- com.park.selTest.SelTest3 -->
+      <class name="com.park.selTest.SelTest2">
+        <methods>
+          <include name="stopServer"/>
+          <include name="startClient"/>
+          <include name="testApp2"/>
+        </methods>
+      </class> <!-- com.park.selTest.SelTest2 -->
     </classes>
   </test> <!-- TmpTest(failed) -->
 </suite> <!-- Failed suite [TestAll] -->

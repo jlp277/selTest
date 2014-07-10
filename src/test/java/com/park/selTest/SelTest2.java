@@ -23,6 +23,6 @@ public class SelTest2 extends SelTest {
                 return d.getTitle().toLowerCase().startsWith("cheese!");
             }
         });
-//		driver.quit();
+		driver.quit();
 	}
 }

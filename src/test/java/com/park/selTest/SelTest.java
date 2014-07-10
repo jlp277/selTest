@@ -22,16 +22,14 @@ public abstract class SelTest {
 	@BeforeClass(alwaysRun = true) 
 	public void startClient() throws URISyntaxException, ClientProtocolException, IOException {
 		fclient = new FixtureClient();
-		System.out.println(fclient);
 		port = Integer.parseInt(fclient.requestCreateFixtureServer(this.getClass().getName()));
-		
+
 		String PROXY = "localhost:" + port;
 		Proxy proxy = new Proxy();
 		proxy.setHttpProxy(PROXY);
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(CapabilityType.PROXY, proxy);
 		driver = new FirefoxDriver(cap);
-//		driver = new FirefoxDriver();
 		
 		System.out.println("BeforeClass of " + (this.getClass().getName()) + ": " + fclient.toString());
 	}
@@ -39,7 +37,6 @@ public abstract class SelTest {
 	@AfterClass(alwaysRun = true)
 	public void stopServer() throws URISyntaxException, ClientProtocolException, IOException {
 		fclient.requestDestroyFixtureServer(port);
-		fclient.closeFixtureClient();
 		System.out.println("Closed: " + fclient + " on " + this.getClass().getName());
 	}
 }

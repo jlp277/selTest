@@ -15,6 +15,6 @@ public class SelTest1 extends SelTest {
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("adsfkljasdfkjasdkjfakjsdfhkjahsdkjfhaksjdhfkjsdhfkjshfdkjshjkdf");
         element.submit();
-//		driver.quit();
+		driver.quit();
 	}
 }

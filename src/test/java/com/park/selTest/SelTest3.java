@@ -7,6 +7,6 @@ public class SelTest3 extends SelTest {
 	public void testApp3 () {
 		System.out.println("Driver 3: " + driver.toString());
 		driver.get("http://abduzeedo.com/");
-//		driver.quit();
+		driver.quit();
 	}
 }
