@@ -1,6 +1,4 @@
 package com.park.selTest;
-//
-//import junit.framework.TestCase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +18,7 @@ public class SelTest2 extends SelTest {
         element.submit();
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getTitle().toLowerCase().startsWith("cheese!");
+            	return d.getTitle().toLowerCase().startsWith("");
             }
         });
 		driver.quit();

@@ -16,7 +16,7 @@ import com.workday.fixtureclient.FixtureClient;
 
 public abstract class SelTest {
 	private int port;
-	protected FixtureClient fclient;
+	private FixtureClient fclient;
 	protected WebDriver driver;
 
 	@BeforeClass(alwaysRun = true) 
@@ -25,18 +25,17 @@ public abstract class SelTest {
 		port = Integer.parseInt(fclient.requestCreateFixtureServer(this.getClass().getName()));
 
 		String PROXY = "localhost:" + port;
+		
 		Proxy proxy = new Proxy();
 		proxy.setHttpProxy(PROXY);
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(CapabilityType.PROXY, proxy);
 		driver = new FirefoxDriver(cap);
-		
 		System.out.println("BeforeClass of " + (this.getClass().getName()) + ": " + fclient.toString());
 	}
 	
 	@AfterClass(alwaysRun = true)
 	public void stopServer() throws URISyntaxException, ClientProtocolException, IOException {
 		fclient.requestDestroyFixtureServer(port);
-		System.out.println("Closed: " + fclient + " on " + this.getClass().getName());
 	}
 }
