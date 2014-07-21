@@ -13,9 +13,9 @@ public class SelTest3 extends SelTest {
 		driver.get("http://abduzeedo.com");
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-            	return d.getTitle().toLowerCase().startsWith("");
+            	return d.getTitle().toLowerCase().startsWith("");	
             }
         });
-		driver.quit();
+//		driver.quit();
 	}
 }

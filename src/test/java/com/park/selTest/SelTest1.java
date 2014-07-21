@@ -16,6 +16,6 @@ public class SelTest1 extends SelTest {
                 return d.getTitle().toLowerCase().startsWith("");
             }
         });
-		driver.quit();
+//		driver.quit();
 	}
 }

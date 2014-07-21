@@ -25,15 +25,17 @@ public abstract class SelTest {
 		port = Integer.parseInt(fclient.requestCreateFixtureServer(this.getClass().getName()));
 
 		String PROXY = "localhost:" + port;
-		
+
 		Proxy proxy = new Proxy();
-		proxy.setHttpProxy(PROXY);
+		proxy.setHttpProxy(PROXY)
+			.setFtpProxy(PROXY)
+			.setSslProxy(PROXY);
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(CapabilityType.PROXY, proxy);
 		driver = new FirefoxDriver(cap);
 		System.out.println("BeforeClass of " + (this.getClass().getName()) + ": " + fclient.toString());
 	}
-	
+
 	@AfterClass(alwaysRun = true)
 	public void stopServer() throws URISyntaxException, ClientProtocolException, IOException {
 		fclient.requestDestroyFixtureServer(port);
