@@ -1,7 +1,7 @@
 selTest
 =======
 
-Basic selenium test suite for testing against a fixture server.
+Basic selenium test suite for testing against a fixture server. Workday Summer '14
 ---------------------------------------------------------------
 
 TestAll - organizes the test classes to be run in parallel as a suite.
